@@ -1,6 +1,6 @@
-require "RGBController/version"
-require "RGBController/server"
-require "RGBController/lamp_control"
+require File.dirname(__FILE__) + "/RGBController/version"
+require File.dirname(__FILE__) + "/RGBController/server"
+require File.dirname(__FILE__) + "/RGBController/lamp_control"
 
 module RGBController
   # Your code goes here...
