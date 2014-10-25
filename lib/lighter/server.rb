@@ -6,10 +6,10 @@ module Lighter
 
     def initialize(opts = {})
       # Define defaults
-      serial        = opts[:serial] |= true
+      serial        = opts[:serial] ||= true
       serial_port   = opts[:serial_port]
       serial_port   = findSerial if serial && serial_port.nil?
-      tcp_port      = opts[:tcp_port] |= 2000
+      tcp_port      = opts[:tcp_port] ||= 2000
 
       sp = openSerial(serial_port) if serial
 
