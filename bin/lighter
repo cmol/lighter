@@ -1,8 +1,8 @@
 #!/usr/bin/env ruby
 $:.unshift File.join(File.dirname(__FILE__), *%w[.. lib])
 
-require 'RGBController'
+require 'Lighter'
 
-RGBController::Server.new if ARGV.first == "server"
+Lighter::Server.new if ARGV.first == "server"
 
 

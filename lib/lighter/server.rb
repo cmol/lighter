@@ -1,4 +1,4 @@
-module RGBController
+module Lighter
   class Server
 
     require 'socket'

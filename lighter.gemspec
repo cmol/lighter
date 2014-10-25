@@ -1,11 +1,11 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'RGBController/version'
+require 'lighter/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "RGBController"
-  spec.version       = RGBController::VERSION
+  spec.name          = "lighter"
+  spec.version       = Lighter::VERSION
   spec.authors       = ["Claus Lensbøl"]
   spec.email         = ["cmol@cmol.dk"]
   spec.summary       = %q{TODO: Write a short summary. Required.}
