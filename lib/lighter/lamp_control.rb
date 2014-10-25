@@ -7,7 +7,7 @@ module Lighter
     end
 
     def fade(lamps, length, cols)
-      data = [mode(lamps,1), cols[0].to_i, cols[1].to_i, cols[2].to_i, length]
+      data = [mode(lamps,FADE), cols[0].to_i, cols[1].to_i, cols[2].to_i, length]
       @sock.puts(data.pack("CCCCC"))
     end
 
