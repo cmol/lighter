@@ -26,11 +26,11 @@ module Lighter
     end
 
     def fadeData(lamps, length, cols)
-      [mode(lamps,FADE), cols[0].to_i, cols[1].to_i, cols[2].to_i, length]
+      [mode(lamps,FADE), *cols, length]
     end
 
     def setData(lamps, cols)
-      [mode(lamps,SET), cols[0].to_i, cols[1].to_i, cols[2].to_i]
+      [mode(lamps,SET), *cols]
     end
   end
 
