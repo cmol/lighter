@@ -7,11 +7,11 @@ module Lighter
     end
 
     def fade(lamps, length, cols)
-      send(fadeData(lamps,length,cols))
+      send([mode(lamps,FADE), *cols, length])
     end
 
     def set(lamps, cols)
-      send(setData(lamps, cols))
+      send([mode(lamps,SET), *cols])
     end
 
     private
@@ -23,14 +23,6 @@ module Lighter
 
     def send(bytes)
       @sock.puts(bytes.pack("C*"))
-    end
-
-    def fadeData(lamps, length, cols)
-      [mode(lamps,FADE), *cols, length]
-    end
-
-    def setData(lamps, cols)
-      [mode(lamps,SET), *cols]
     end
   end
 
