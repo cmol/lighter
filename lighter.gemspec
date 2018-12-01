@@ -8,8 +8,9 @@ Gem::Specification.new do |spec|
   spec.version       = Lighter::VERSION
   spec.authors       = ["Claus Lensbøl"]
   spec.email         = ["cmol@cmol.dk"]
-  spec.summary       = %q{TODO: Write a short summary. Required.}
-  spec.description   = %q{TODO: Write a longer description. Optional.}
+  spec.summary       = %q{Library for interacting with API}
+  spec.description   = %q{The Ligher API is made for interacting with an RGB
+lighting system}
   spec.homepage      = ""
   spec.license       = "MIT"
 
