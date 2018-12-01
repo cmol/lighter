@@ -14,6 +14,14 @@ module Lighter
       send([mode(lamps,FADE_LONG), *cols, length])
     end
 
+    def fade_cycle(lamps, length)
+      send([mode(lamps,CYCLE_FADE), length])
+    end
+
+    def fade_water(lamps, length)
+      send([mode(lamps,WATER_FADE), length])
+    end
+
     def set(lamps, cols)
       send([mode(lamps,SET), *cols])
     end

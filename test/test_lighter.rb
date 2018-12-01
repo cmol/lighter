@@ -36,4 +36,24 @@ class TestLighter < MiniTest::Unit::TestCase
     lc.fade_long(2, 77, [17,17,17])
     assert mock.verify
   end
+
+  def test_cycle_fade
+    mock = MiniTest::Mock.new
+    mock.expect(:puts, nil, [[138,128].pack("C*")])
+    mock.expect(:puts, nil, [[74,17].pack("C*")])
+    lc = ::Lighter::LampControl.new(socket: mock)
+    lc.fade_cycle(4, 128)
+    lc.fade_cycle(2, 17)
+    assert mock.verify
+  end
+
+  def test_water_fade
+    mock = MiniTest::Mock.new
+    mock.expect(:puts, nil, [[139,128].pack("C*")])
+    mock.expect(:puts, nil, [[75,17].pack("C*")])
+    lc = ::Lighter::LampControl.new(socket: mock)
+    lc.fade_water(4, 128)
+    lc.fade_water(2, 17)
+    assert mock.verify
+  end
 end
