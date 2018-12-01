@@ -26,4 +26,14 @@ class TestLighter < MiniTest::Unit::TestCase
     lc.fade(2, 77, [17,17,17])
     assert mock.verify
   end
+
+  def test_fade_long
+    mock = MiniTest::Mock.new
+    mock.expect(:puts, nil, [[130,128,128,129,17].pack("C*")])
+    mock.expect(:puts, nil, [[66,17,17,17,77].pack("C*")])
+    lc = ::Lighter::LampControl.new(socket: mock)
+    lc.fade_long(4, 17, [128,128,129])
+    lc.fade_long(2, 77, [17,17,17])
+    assert mock.verify
+  end
 end

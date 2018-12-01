@@ -10,6 +10,10 @@ module Lighter
       send([mode(lamps,FADE), *cols, length])
     end
 
+    def fade_long(lamps, length, cols)
+      send([mode(lamps,FADE_LONG), *cols, length])
+    end
+
     def set(lamps, cols)
       send([mode(lamps,SET), *cols])
     end
